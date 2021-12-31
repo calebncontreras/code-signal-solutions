@@ -11,9 +11,10 @@ def solution(a):
     a_len = len(a)
     counter = 0
     for x in range(a_len - 1):
-        while a[x] >= a[x + 1]:
-            a[x + 1] += 1
-            counter += 1
+        if a[x] >= a[x + 1]:
+            diff = (a[x] - a[x + 1]) + 1
+            a[x + 1] += (a[x] - a[x + 1]) + 1
+            counter += diff
 
     return counter
 
